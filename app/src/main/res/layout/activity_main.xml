@@ -44,6 +44,7 @@
 
             android:layout_width="wrap_content"
             app:srcCompat="@drawable/ic_arrow_downward"
+            android:onClick="clickDownwardArrow"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
@@ -52,6 +53,7 @@
 
         <ImageView
             android:layout_width="wrap_content"
+            android:onClick="clickSuccess"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_check"
             android:layout_centerHorizontal="true"
@@ -61,6 +63,7 @@
         <ImageView
             android:layout_width="wrap_content"
             app:srcCompat="@drawable/ic_arrow_upward"
+            android:onClick="clickUpwardArrow"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
@@ -72,6 +75,7 @@
     <Button
         android:id="@+id/reset_button"
         android:layout_width="match_parent"
+        android:onClick="clickResetButton"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="@dimen/margin_eight"
