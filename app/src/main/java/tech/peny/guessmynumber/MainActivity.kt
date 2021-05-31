@@ -26,50 +26,42 @@ class MainActivity : AppCompatActivity() {
 
     fun clickDownwardArrow(view : View){
         if(number == 5){
-            number = 3;
-            printQuestion()
+          guessTheNumber(3)
+
         }else if(number == 3){
-            number = 2
-            printQuestion()
+            guessTheNumber(2)
 
         }else if(number == 2){
-            number = 1
-            printQuestion()
+            guessTheNumber(1)
 
         }else if(number == 8){
-            number = 7
-            printQuestion()
+            guessTheNumber(7)
         }else if(number == 7){
-            number = 6
-            printQuestion()
+            guessTheNumber(6)
         }
     }
 
 
-    fun clickUpwardArrow(view : View){
+    private fun clickUpwardArrow(view : View){
         if (number == 3){
-            number = 4
-            printQuestion()
+            guessTheNumber(4)
         }else if(number == 5){
-            number = 8
-            printQuestion()
+            guessTheNumber(8)
         }else if (number == 8){
-            number = 9
-            printQuestion()
+            guessTheNumber(9)
         }else if (number == 9){
-            number = 10
-            printQuestion()
+            guessTheNumber(10)
         }
     }
 
-    fun clickSuccess(view : View){
+    private fun clickSuccess(view : View){
         questionTextView.visibility  = View.INVISIBLE
         resultTextView.visibility = View.VISIBLE
         resultTextView.text = String.format(resources.getString(R.string.str_success), number)
 
     }
 
-    fun clickResetButton(view : View){
+    private fun clickResetButton(view : View){
         resultTextView.visibility = View.INVISIBLE
         questionTextView.visibility = View.VISIBLE
         number = 5
@@ -77,7 +69,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun printQuestion(){
+    private fun printQuestion(){
         questionTextView.text = String.format(resources.getString(R.string.str_question), number)
+    }
+
+    fun guessTheNumber(myNumber : Int){
+        number = myNumber
+        printQuestion()
     }
 }
